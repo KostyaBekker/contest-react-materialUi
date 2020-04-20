@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background: rgb(105, 105, 105);
+}
+.checkRow{
+  background: rgb(110, 110, 110);
+}
+/* .MuiTableCell-root {
+  font-size: 12px !important;
+  padding: 6px !important;
+} */

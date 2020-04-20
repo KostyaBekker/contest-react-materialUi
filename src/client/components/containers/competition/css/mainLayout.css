@@ -1,0 +1,8 @@
+.main__header {
+  background: rgb(94, 94, 94);
+  width: 100%;
+  margin-bottom: 2px;
+}
+.main__header button {
+  margin: 2px;
+}

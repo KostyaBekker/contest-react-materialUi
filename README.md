@@ -1,79 +1,17 @@
 
 # TODO:
 
-{
-  "title":"New ",
-  "date": "",
-  "questionsNumber":200,
-  "sport": {
-    "a":60,
-    "b":60,
-    "c":60,
-  },
-  "tradition": {
-    "a":30,
-    "b":30
-  }
-};
-ВОПРОС
-тип:
- - текст
- - фото
- - видео
-раздел:
- - спорт ушу
- группа:
-  - А
-  - B
-  - C
- - традиционное ушу
- группа:
-  - А
-  - B
- - саньшоу
- группа:
-  - саньда
-  - циньда
-  - туйшоу
-  - винчун
+Start: npm run client
 
+1) Меню с 3 айтемами: "Соревнования", "Печать", "Настройки" -- по умолчанию выбрано меню "Соревнования"
 
-var sportG = [a, b, c]
-var tradG = [a, b]
-var syanshowG = ['SangDa', 'XingDa', 'TuiShow', 'VingChung']
+2) Весь экран разделен на 3 колонки, как в full.pdf на стр. 6
+Левая колонка, там будет не 2, а 3 фильтра - Расписание, Потоки, Возраст
 
-var category = "sport"
+Под этими тремя пунктами будут ковры (от 1 до 4)
 
-switch category
-case 'sport': return sportG
+Внизу список.
+В документе пример списка расписания, я скинул выше картинки видов (by_events) и возрастов (by_age)
 
-{
-  "type": "text",
-  "question":"qoiweyqioeyioqeyioqowie qioeyq e"
-  "type":"sport",
-  "group":"a",
-  "answers": [
-    {"text":"asdasda","correct":"false"},
-    {"text":"asdasda","correct":"true"},
-    {"text":"asdasda","correct":"false"},
-    {"text":"asdasda","correct":"false"},
-  ]
-}
-
---> guid
-
-GET /questions ==> 
-POST /questions
-PUT /questions/{id}
-DELETE /questions/{id}
-
-POST /users --> create user
-PUT /users/{id} --> update user
-GET /users --> get all users
-DELETE /users/{id} -> delete user
-
-
-POST /sessions
-
-
-
+Средняя колонка - список участников (пусть пока будет пустая)
+Левая - Детали учестника (тоже пока будет пустой)

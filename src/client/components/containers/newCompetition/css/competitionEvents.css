@@ -1,0 +1,32 @@
+.list__data {
+  height: calc(100% - 40px);
+  overflow: scroll;
+}
+.main__list__data {
+  width: 100%;
+  border: solid 2px rgb(0, 0, 0)	;
+}
+.button__form {
+  width: calc(50% - 10px);
+  text-transform: none !important;
+  margin: 5px !important;
+  /* font-size: 10px; */
+}
+.button__events__setting {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px;
+  border: 1px solid #385D8A;
+}
+.button__events__setting button{
+  margin: 2px !important;
+}
+.block__weapon {
+  width: calc(100% - 12px);
+  margin: 5px;
+  border: solid 1px silver;
+  border-radius: 4px;
+}
+.MuiRadio-colorSecondary.Mui-checked {
+  color: blue;
+}

@@ -1,0 +1,49 @@
+.list__data {
+  height: calc(100% - 40px);
+  overflow: scroll;
+}
+
+.main__list__data {
+  width: 100%;
+  border: solid 2px rgb(0, 0, 0)	;
+}
+
+.data__form {
+  width: calc(100% - 10px);
+  margin: 5px !important;
+}
+.date__form {
+  width: calc(50% - 10px);
+  /* font-size: 10px; */
+}
+.MuiFormControl-root {
+  margin: 5px !important;
+}
+/* .MuiButton-outlined {
+  margin: 5px !important;
+}  */
+.button__general__setting {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px;
+  border: 1px solid #385D8A;
+}
+.button__general__setting button{
+  margin: 2px !important;
+}
+.blockQuantity {
+  width: calc(100% - 10px) !important;
+  margin: 5px !important;
+}
+.itemQuantity {
+  width: 62px;
+}
+.nameCell {
+  font-size: 15px !important;
+  padding: 2px !important;
+  padding-left: 12px !important;
+  height: 10px !important;
+}
+.itemQuantity input {
+  height: 5px !important;
+}

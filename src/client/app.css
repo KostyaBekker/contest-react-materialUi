@@ -11,3 +11,10 @@
   border: 2px solid red;
   box-shadow: 0px 0px 5px red;
 }
+.form__wrap button {
+  margin: 2px;
+}
+.MuiTableCell-root {
+  font-size: 12px !important;
+  padding: 2px !important;
+}

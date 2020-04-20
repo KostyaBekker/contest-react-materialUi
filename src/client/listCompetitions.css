@@ -1,0 +1,11 @@
+.form__wrap {
+  margin: 80px auto;
+  display: flex;
+  justify-content: center;
+}
+.form__wrap button {
+  margin: 2px;
+}
+/* .MuiTableCell-root {
+  font-size: 12px !important;
+} */

@@ -1,0 +1,41 @@
+.create__wrap {
+  width: 100%;
+  height: calc(100vh - 16px);
+}
+.create__block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: 3px solid rgb(71,125,194);
+  /* background: rgb(71,125,194); */
+  flex-direction: row;
+}
+.setting__block {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+  width: 268px;
+  border: solid 2px rgb(0, 0, 0)	;
+}
+.main__create__block {
+  display: flex;
+  width: calc(100vw - 288px);
+}
+.list__setting {
+  border: 1px solid #385D8A;
+  margin: 2px;
+}
+.list__setting li{
+  font-size: 14px;
+  cursor: pointer;
+}
+.button__setting {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #385D8A;
+  margin: 2px;
+}
+.button__setting button{
+  margin: 2px !important;
+}

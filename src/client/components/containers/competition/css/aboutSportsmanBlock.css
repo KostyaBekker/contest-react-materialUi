@@ -1,0 +1,22 @@
+.header__info {
+  display: flex;
+}
+.photo {
+  height: 88px;
+  width: 90px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  /* background: rgb(0, 97, 97); */
+}
+.sportsman__info {
+  width: 232px;
+}
+.sportsman__info  div{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 230px;
+  /* border: 1px solid rgb(158, 158, 158); */
+  /* border-radius: 1px; */
+}

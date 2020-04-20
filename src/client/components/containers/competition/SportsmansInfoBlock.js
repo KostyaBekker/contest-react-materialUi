@@ -1,0 +1,104 @@
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+// import Button from '@material-ui/core/Button';
+import TableRow from '@material-ui/core/TableRow';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import Paper from '@material-ui/core/Paper';
+
+import './css/sportsmansInfoBlock.css';
+
+// eslint-disable-next-line react/prefer-stateless-function
+class CompetitionInfoBlock extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeButton: ''
+    };
+  }
+
+  checkSportsman = (row, index) => {
+    // console.log(rows[index]);
+    this.props.sportsmanData(row);
+    this.setState({ activeButton: index });
+    // console.log(row);
+  };
+
+  render() {
+    const { competition, sportsman } = this.props;
+    const { activeButton } = this.state;
+    // console.log('sportsman:', sportsman);
+    // console.log(competition.sportsman);
+
+    return (
+      <div>
+        <div className="header">
+          { competition.name }
+        </div>
+        <div>
+          <TableContainer component={Paper} style={{ width: '100%' }}>
+            <Table aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center">#</TableCell>
+                  <TableCell align="center">ФИО</TableCell>
+                  <TableCell align="center">Время</TableCell>
+                  <TableCell align="center">Команда</TableCell>
+                  <TableCell align="center">Оценка</TableCell>
+                  <TableCell align="center">Место</TableCell>
+                  <TableCell align="center">Примечание</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {competition.sportsman && competition.sportsman.map((row, index) => (
+                  <TableRow
+                    key={ index }
+                    onClick={() => this.checkSportsman(row, index)}
+                    className={(activeButton === index) && (sportsman.name) ? 'checkRow' : ''}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {index + 1}
+                    </TableCell>
+                    <TableCell align="center">{row.name}</TableCell>
+                    <TableCell align="center">{row.team}</TableCell>
+                    <TableCell align="center">{row.rating}</TableCell>
+                    <TableCell align="center">{row.place}</TableCell>
+                    <TableCell align="center">{row.note}</TableCell>
+                    <TableCell align="center">{row.comment}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
+      </div>
+    );
+  }
+}
+
+CompetitionInfoBlock.defaultProps = {
+  competition: {},
+} ;
+
+CompetitionInfoBlock.propTypes = {
+  // index: PropTypes.number,
+  competition: PropTypes.shape({ 
+    name: PropTypes.string,
+    time: PropTypes.string,
+    sportsman: PropTypes.array,
+  })
+  // style: PropTypes.object,
+  // children: PropTypes.node.isRequired,
+  // dispatch: PropTypes.func.isRequired,
+  // match: PropTypes.object.isRequired,
+};
+
+export default connect(
+  null,
+  { }
+)(CompetitionInfoBlock);

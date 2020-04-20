@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -11,9 +13,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
-
-import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { login } from '../../redux/actionsAdmin';
 // import InputAdornment from '@material-ui/core/InputAdornment';
 import '../../app.css';
@@ -42,10 +41,6 @@ class Login extends Component {
   handleClickShowPassword = () => {
     this.setState({ ...this.state, showPassword: !this.state.showPassword });
   };
-
-//  handleMouseDownPassword = event => {
-//     event.preventDefault();
-//   };
 
   isValid = () => {
     // const valid = document.querySelector('.isValidEmail');
@@ -109,24 +104,24 @@ class Login extends Component {
               label="Password"
               className="isValidPassword"
               onChange={e => this.updatePassword(e.target.value)}
-              endAdornment={
+              endAdornment={(
                 <InputAdornment position="end">
                   <IconButton
                     // aria-label="toggle password visibility"
                     onClick={this.handleClickShowPassword}
                     // onMouseDown={this.handleMouseDownPassword}
                   >
-                  {showPassword ? <Visibility /> : <VisibilityOff />}
+                    {showPassword ? <Visibility /> : <VisibilityOff />}
                   </IconButton>
                 </InputAdornment>
-              }
+              )}
             />
           </FormControl>
           <br />
           <Button variant="contained" onClick={() => this.login(input, password)}>
             Enter
           </Button>
-          <Link className="link" to="/main" />
+          <Link className="link" to="/list_competitions" />
         </div>
       </div>
     );
