@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 // import Button from '@material-ui/core/Button';
 import TableRow from '@material-ui/core/TableRow';
 import Table from '@material-ui/core/Table';
@@ -9,17 +9,28 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import Paper from '@material-ui/core/Paper';
+import firebase from 'firebase';
+import { connect } from 'react-firebase';
 
 import './css/sportsmansInfoBlock.css';
+
+
+
+firebase.initializeApp({
+  databaseURL: 'https://referee-web.firebaseio.com/',
+  apiKey: 'AIzaSyBqEZ1wV00q4sgacaLyH5BlFXLrJGxY7N0',
+});
 
 // eslint-disable-next-line react/prefer-stateless-function
 class CompetitionInfoBlock extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeButton: ''
+      activeButton: '',
+      // value: ''
     };
   }
+  
 
   checkSportsman = (row, index) => {
     // console.log(rows[index]);
@@ -29,12 +40,16 @@ class CompetitionInfoBlock extends Component {
   };
 
   render() {
+    console.log(this.props);
+
+    console.log(this.props.value);
     const { competition, sportsman } = this.props;
     const { activeButton } = this.state;
     // console.log('sportsman:', sportsman);
     // console.log(competition.sportsman);
 
     return (
+      
       <div>
         <div className="header">
           { competition.name }
@@ -76,6 +91,9 @@ class CompetitionInfoBlock extends Component {
             </Table>
           </TableContainer>
         </div>
+        <button onClick={() => this.props.setValue(this.props.value - 1)}>-</button>
+          <span>{this.props.value}</span>
+        <button onClick={() => this.props.setValue(this.props.value + 1)}>+</button>
       </div>
     );
   }
@@ -98,7 +116,13 @@ CompetitionInfoBlock.propTypes = {
   // match: PropTypes.object.isRequired,
 };
 
-export default connect(
-  null,
-  { }
-)(CompetitionInfoBlock);
+export default connect((props, ref) => ({
+  value: 'counterValue',
+  propsRef: props,
+  setValue: value => ref('counterValue').set(value)
+}))(CompetitionInfoBlock);
+
+// export default connect(
+//   null,
+//   { }
+// )(CompetitionInfoBlock);

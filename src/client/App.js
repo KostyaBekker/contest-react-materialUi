@@ -11,14 +11,14 @@ import ListCompetitions from './components/containers/ListCompetitions';
 
 import СreateСompetition from './components/containers/newCompetition/CreateСompetition';
 import GeneralSettings from './components/containers/newCompetition/GeneralSettings';
-import CompetitionEvents from './components/containers/newCompetition/CompetitionEvents';
-import AgeCategories from './components/containers/newCompetition/AgeCategories';
-import OrganizationalConditions from './components/containers/newCompetition/OrganizationalConditions';
-import Judging from './components/containers/newCompetition/Judging';
-import Scoring from './components/containers/newCompetition/Scoring';
-import Administration from './components/containers/newCompetition/Administration';
+import CompetitionEvents from './components/containers/newCompetition/competitionEvants/CompetitionEvents';
+import AgeCategories from './components/containers/newCompetition/ageCategories/AgeCategories';
+// import OrganizationalConditions from './components/containers/newCompetition/OrganizationalConditions';
+import Judging from './components/containers/newCompetition/judging/Judging';
+import Scoring from './components/containers/newCompetition/scoring/Scoring';
+import Administration from './components/containers/newCompetition/administration/Administration';
 import Language from './components/containers/newCompetition/Language';
-import Seminar from './components/containers/newCompetition/Seminar';
+// import Seminar from './components/containers/newCompetition/Seminar';
 
 import MainLayout from './components/containers/competition/MainLayout';
 import Сompetition from './components/containers/competition/Сompetition';
@@ -52,11 +52,11 @@ class App extends Component {
                 <AgeCategories />
               </СreateСompetition>
             </Route>
-            <Route exact path="/organizational_conditions">
+            {/* <Route exact path="/organizational_conditions">
               <СreateСompetition>
                 <OrganizationalConditions />
               </СreateСompetition>
-            </Route>
+            </Route> */}
             <Route exact path="/judging">
               <СreateСompetition>
                 <Judging />
@@ -77,11 +77,11 @@ class App extends Component {
                 <Language />
               </СreateСompetition>
             </Route>
-            <Route exact path="/seminar">
+            {/* <Route exact path="/seminar">
               <СreateСompetition>
                 <Seminar />
               </СreateСompetition>
-            </Route>
+            </Route> */}
 
             <Route exact path="/print">
               <MainLayout>

@@ -1,0 +1,10 @@
+.itemScrolingHead {
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 5px !important;
+  margin: 5px !important;
+}
+.itemScroling {
+  /* border: 1px solid rgb(192, 192, 192);
+  border-radius: 5px !important; */
+  margin: 5px !important;
+}

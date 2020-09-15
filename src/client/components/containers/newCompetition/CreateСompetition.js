@@ -13,7 +13,7 @@ class CreateCompetition extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      setting: 'general settings',
+      setting: window.location.pathname
     };
   }
 
@@ -35,9 +35,9 @@ class CreateCompetition extends Component {
                   to="/general_settings"
                   style={{
                     textDecoration: 'none',
-                    color: setting === 'general settings' ? 'blue' : 'black'
+                    color: setting === '/general_settings' ? 'blue' : 'black'
                   }}
-                  onClick={() => this.checkSettting('general settings')}
+                  onClick={() => this.checkSettting('/general_settings')}
                 >
                   <li>
                     Основные установки/general settings
@@ -47,9 +47,9 @@ class CreateCompetition extends Component {
                   to="/competition_events"
                   style={{
                     textDecoration: 'none',
-                    color: setting === 'competition events' ? 'blue' : 'black'
+                    color: setting === '/competition_events' ? 'blue' : 'black'
                   }}
-                  onClick={() => this.checkSettting('competition events')}
+                  onClick={() => this.checkSettting('/competition_events')}
                 >
                   <li>
                     Виды соревнования/competition events
@@ -59,33 +59,21 @@ class CreateCompetition extends Component {
                   to="/age_categories"
                   style={{
                     textDecoration: 'none',
-                    color: setting === 'age categories' ? 'blue' : 'black'
+                    color: setting === '/age_categories' ? 'blue' : 'black'
                   }}
-                  onClick={() => this.checkSettting('age categories')}
+                  onClick={() => this.checkSettting('/age_categories')}
                 >
                   <li>
                     Возрастные категории/age categories
                   </li>
                 </Link>
                 <Link
-                  to="/organizational_conditions"
-                  style={{
-                    textDecoration: 'none',
-                    color: setting === 'organizational conditions' ? 'blue' : 'black'
-                  }}
-                  onClick={() => this.checkSettting('organizational conditions')}
-                >
-                  <li>
-                    Организационные условия/Organizational conditions
-                  </li>
-                </Link>
-                <Link
                   to="/judging"
                   style={{
                     textDecoration: 'none',
-                    color: setting === 'judging' ? 'blue' : 'black'
+                    color: setting === '/judging' ? 'blue' : 'black'
                   }}
-                  onClick={() => this.checkSettting('judging')}
+                  onClick={() => this.checkSettting('/judging')}
                 >
                   <li>
                     Судейство/judging
@@ -95,9 +83,9 @@ class CreateCompetition extends Component {
                   to="/scoring"
                   style={{
                     textDecoration: 'none',
-                    color: setting === 'scoring' ? 'blue' : 'black'
+                    color: setting === '/scoring' ? 'blue' : 'black'
                   }}
-                  onClick={() => this.checkSettting('scoring')}
+                  onClick={() => this.checkSettting('/scoring')}
                 >
                   <li>
                     Оценивание/scoring
@@ -107,9 +95,9 @@ class CreateCompetition extends Component {
                   to="/administration"
                   style={{
                     textDecoration: 'none',
-                    color: setting === 'administration' ? 'blue' : 'black'
+                    color: setting === '/administration' ? 'blue' : 'black'
                   }}
-                  onClick={() => this.checkSettting('administration')}
+                  onClick={() => this.checkSettting('/administration')}
                 >
                   <li>
                     Администрирование/administration
@@ -119,24 +107,12 @@ class CreateCompetition extends Component {
                   to="/language"
                   style={{
                     textDecoration: 'none',
-                    color: setting === 'language' ? 'blue' : 'black'
+                    color: setting === '/language' ? 'blue' : 'black'
                   }}
-                  onClick={() => this.checkSettting('language')}
+                  onClick={() => this.checkSettting('/language')}
                 >
                   <li>
                     Язык/Language
-                  </li>
-                </Link>
-                <Link
-                  to="/seminar"
-                  style={{
-                    textDecoration: 'none',
-                    color: setting === 'seminar' ? 'blue' : 'black'
-                  }}
-                  onClick={() => this.checkSettting('seminar')}
-                >
-                  <li>
-                    Семинар/Seminar
                   </li>
                 </Link>
               </ul>

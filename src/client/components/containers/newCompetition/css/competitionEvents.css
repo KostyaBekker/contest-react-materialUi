@@ -18,7 +18,7 @@
   margin: 2px;
   border: 1px solid #385D8A;
 }
-.button__events__setting button{
+.button__events__setting button {
   margin: 2px !important;
 }
 .block__weapon {
@@ -26,7 +26,53 @@
   margin: 5px;
   border: solid 1px silver;
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.form__control__weapon {
+  display: flex;
+  flex-direction: column;
+}
+.button__control__weapon {
+  width: 110px !important;
+  margin: 5px !important;
 }
 .MuiRadio-colorSecondary.Mui-checked {
   color: blue;
+}
+.info__block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.option__button {
+  /* display: flex; */
+  width: 120px;
+}
+.control__form {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+.blockAge {
+  width: calc(100% - 10px) !important;
+  margin: 5px !important;
+}
+.nameCell {
+  font-size: 15px !important;
+  padding: 2px !important;
+  padding-left: 12px !important;
+  height: 10px !important;
+}
+.itemAge {
+  width: 60px;
+}
+.itemDate {
+  width: 170px;
+}
+.sanshawGroup {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 5px;
+  margin: 5px;
 }

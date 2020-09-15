@@ -92,7 +92,7 @@ class CompetitionInfoBlock extends Component {
     this.state = {
       type: 'timetable',
       typeCarpets: '',
-      activeButton: ''
+      activeButton: '',
     };
   }
 
@@ -180,7 +180,7 @@ class CompetitionInfoBlock extends Component {
                 color={typeCarpets === (index+1) ? 'default' : 'primary'}
                 onClick={() => this.updateTypeCarpets( (index+1)) }
               >
-                Ковер №{ index+ 1}
+                Ковер №{index+1}
               </Button>
             ))}
           </div>

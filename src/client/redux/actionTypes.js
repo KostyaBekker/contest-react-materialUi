@@ -1,1 +1,13 @@
 export const LOGIN = 'LOGIN';
+export const LISTWEAPON = 'LISTWEAPON';
+export const EDITWEAPON = 'EDITWEAPON';
+export const DELETWEAPON = 'DELETWEAPON';
+export const LISTAGE = 'LISTAGE';
+export const EDITAGE = 'EDITAGE';
+export const DELETAGE = 'DELETAGE';
+export const SENDAGE = 'SENDAGE';
+export const LISTAGEINFO = 'LISTAGEINFO';
+export const EDITAGEINFO = 'EDITAGEINFO';
+export const DELETAGEINFO = 'DELETAGEINFO';
+export const SENDAGEINFO = 'SENDAGEINFO';
+export const EDITSCROLINGTABLELIST = 'EDITSCROLINGTABLELIST';

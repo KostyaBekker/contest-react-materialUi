@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-// import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
@@ -99,17 +98,6 @@ const rowsTypeLevel = [
       'Городской',
     ]
   },
-  {
-    level: 'Семинар',
-    title: '*Тип семинара:',
-    key: 'typeLevel',
-    data: [
-      'Международный',
-      'Национальный',
-      'Областной',
-      'Городской',
-    ]
-  }
 ];
 
 const rowsTable = [
@@ -163,12 +151,19 @@ class GeneralSettings extends Component {
   };
 
   editSection = (section) => {
-    this.setState({ discipline: '' });
-    this.setState({ section });
+    this.setState({ 
+      discipline: '',
+      type: '',
+      section
+    });
   };
 
   editDiscipline = (discipline) => {
     this.setState({ discipline });
+  };
+
+  editType = (type) => {
+    this.setState({ type });
   };
 
   renderDiscipline = (section, discipline) => {
@@ -209,61 +204,92 @@ class GeneralSettings extends Component {
   renderTable = (section) => {
     if (section !== '') {
       return (
-        <TableContainer variant="outlined" className="blockQuantity" component={Paper}>
-          <Table aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell> </TableCell>
-                <TableCell align="center">Всего</TableCell>
-                <TableCell align="center">М</TableCell>
-                <TableCell align="center">Ж</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rowsTable.map((item, index) => {
-                if (item.section !== section) {
-                  return (
-                    <TableRow key={ index }>
-                      <TableCell className="nameCell" align="left">{item.title}</TableCell>
-                      <TableCell align="center">
-                        <TextField
-                          size="small"
-                          className="itemQuantity"
-                          variant="outlined"
-                          type="number"
-                          defaultValue="0"
-                          // onChange={e => this.editFinalApplication(e.target.value)}
-                        />
-                      </TableCell>
-                      <TableCell align="center">
-                        <TextField
-                          // style={{ height: '5px' }}
-                          size="small"
-                          className="itemQuantity"
-                          variant="outlined"
-                          type="number"
-                          defaultValue="0"
-                          // onChange={e => this.editFinalApplication(e.target.value)}
-                        />
-                      </TableCell>
-                      <TableCell align="center">
-                        <TextField
-                          size="small"
-                          className="itemQuantity"
-                          variant="outlined"
-                          type="number"
-                          defaultValue="0"
-                          // onChange={e => this.editFinalApplication(e.target.value)}
-                        />
-                      </TableCell>
-                    </TableRow>
-                  );
-                }  
-              },)  
-              }
-            </TableBody>
-          </Table>
-        </TableContainer>
+        <div>
+          <TableContainer variant="outlined" className="blockQuantity" component={Paper}>
+            <Table aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell> </TableCell>
+                  <TableCell align="center">Всего</TableCell>
+                  <TableCell align="center">М</TableCell>
+                  <TableCell align="center">Ж</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rowsTable.map((item, index) => {
+                  if (item.section !== section) {
+                    return (
+                      <TableRow key={ index }>
+                        <TableCell className="nameCell" align="left">{item.title}</TableCell>
+                        <TableCell align="center">
+                          <TextField
+                            size="small"
+                            className="itemQuantity"
+                            variant="outlined"
+                            type="number"
+                            defaultValue="0"
+                            // onChange={e => this.editFinalApplication(e.target.value)}
+                          />
+                        </TableCell>
+                        <TableCell align="center">
+                          <TextField
+                            // style={{ height: '5px' }}
+                            size="small"
+                            className="itemQuantity"
+                            variant="outlined"
+                            type="number"
+                            defaultValue="0"
+                            // onChange={e => this.editFinalApplication(e.target.value)}
+                          />
+                        </TableCell>
+                        <TableCell align="center">
+                          <TextField
+                            size="small"
+                            className="itemQuantity"
+                            variant="outlined"
+                            type="number"
+                            defaultValue="0"
+                            // onChange={e => this.editFinalApplication(e.target.value)}
+                          />
+                        </TableCell>
+                      </TableRow>
+                    );
+                  }
+                },)
+                }
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <TextField
+            size="small"
+            className="data__form"
+            variant="outlined"
+            label="*Количество площадок:"
+            type="number"
+            defaultValue="0"
+            // onChange={e => this.editFinalApplication(e.target.value)}
+          />
+        </div>
+      );
+    }
+  }
+
+  renderType = (section, type) => {
+    if (section === 'Таолу') {
+      return (
+        <div>
+          <FormControl variant="outlined" className="data__form" size="small">
+            <InputLabel>Выступление по возросту/уровню:</InputLabel>
+            <Select
+              value={type}
+              onChange={e => this.editType(e.target.value)}
+              label="Выступление по возросту/уровню:"
+            >
+              <MenuItem value="По возрасту">По возрасту</MenuItem>
+              <MenuItem value="По уровню">По уровню</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
       );
     }
   }
@@ -284,7 +310,8 @@ class GeneralSettings extends Component {
       typeLevel,
       status,
       section,
-      discipline
+      discipline,
+      type
     } = this.state;
 
     console.log(
@@ -302,7 +329,8 @@ class GeneralSettings extends Component {
       typeLevel,
       status,
       section,
-      discipline
+      discipline,
+      type
     );
 
     return (
@@ -361,13 +389,9 @@ class GeneralSettings extends Component {
                 className="data__form"
                 variant="outlined"
                 component="label"
-                style={{ display: 'flex', justifyContent: 'start' }}
+                style={{ display: 'flex', justifyContent: 'start', margin: '5px' }}
               >
                 {item.title}
-                {/* <input
-                  type="file"
-                  // style={{ display: "none" }}
-                /> */}
               </Button>
             );
           },)
@@ -388,7 +412,6 @@ class GeneralSettings extends Component {
             >
               <MenuItem value="Чемпионат">Чемпионат</MenuItem>
               <MenuItem value="Кубок(Турнир)">Кубок(Турнир)</MenuItem>
-              <MenuItem value="Семинар">Семинар</MenuItem>
             </Select>
           </FormControl>
           {rowsTypeLevel.map((item, index) => {
@@ -434,15 +457,7 @@ class GeneralSettings extends Component {
           </FormControl>
           {this.renderDiscipline(section, discipline)}
           {this.renderTable(section)}
-          <TextField
-            size="small"
-            className="data__form"
-            variant="outlined"
-            label="*Количество площадок:"
-            type="number"
-            defaultValue="0"
-            // onChange={e => this.editFinalApplication(e.target.value)}
-          />
+          {this.renderType(section, type)}
         </div>
         <div className="button__events__setting">
           <Button
